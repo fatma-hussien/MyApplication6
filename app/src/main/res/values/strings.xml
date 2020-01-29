@@ -1,3 +1,22 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">you can</string>
+    <string name="signup">SIGN UP</string>
+    <string name="login">LOGIN</string>
+    <string name="fname">first name </string>
+    <string name="lname">last name </string>
+    <string name="Email">example@example.com </string>
+    <string name="pass">password</string>
+    <string name="repass">repassword</string>
+    <string name="RB1">male</string>
+    <string name="tv_gender">gender</string>
+    <string name="RB2">female</string>
+    <string name="number">number phone</string>
+    <string-array name="countries">
+        <item>Afghanstan</item>
+        <item>Albania</item>
+        <item>Andorra</item>
+        <item>Angola</item>
+        <item>Yamen</item>
+        <item>Eygpt</item>
+    </string-array>
 </resources>

@@ -8,43 +8,56 @@ import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class login extends AppCompatActivity {
 
-    TextInputLayout textInputEmail,textInputusername,textInputpassword;
-    TextInputEditText textInputEmail_et,textInputusername_et,textInputpassword_et;
+    Button button_signup;
+    TextInputLayout textInputEmail,textInputpassword;
+    TextInputEditText textInputEmail_et,textInputpassword_et;
     Button button_login;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         textInputEmail=findViewById(R.id.email);
-        textInputusername=findViewById(R.id.username);
         textInputpassword=findViewById(R.id.pass);
         textInputEmail_et=findViewById(R.id.et_email);
         textInputpassword_et=findViewById(R.id.et_pass);
-        textInputusername_et=findViewById(R.id.et_username);
         button_login=findViewById(R.id.login);
+        button_signup=findViewById(R.id.signup);
 
         button_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if(!validatemail()|!validateuser()|!validatepass())
+                String strEmail=textInputEmail_et.getText().toString().trim();
+                String strpass=textInputpassword_et.getText().toString().trim();
+                if(!validatemail()|!validatepass())
                 {
                     return;
                 }
-                else
-                {
-                    textInputEmail_et.setText("");
-                    textInputusername_et.setText("");
-                    textInputpassword_et.setText("");
-                    Intent i=new Intent(login.this,Home.class);
-                    startActivity(i);
+                else {
+                    if (strEmail.equals("fatma@gmail.com") && strpass.equals("123"))
+                    {
+                        textInputEmail_et.setText("");
+                        textInputpassword_et.setText("");
+                        Intent i = new Intent(login.this, Home.class);
+                        startActivity(i);
+                    }
+                    else
+                        Toast.makeText(login.this,"Email or password is not correct ",Toast.LENGTH_LONG).show();
                 }
             }
         });
+        button_signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                Intent i = new Intent(login.this, signup.class);
+                startActivity(i);
+            }
+        });
     }
     private boolean validatemail()
     {
@@ -64,26 +77,6 @@ public class login extends AppCompatActivity {
        else
         {
             textInputEmail.setError(null);
-            return true;
-        }
-    }
-    private boolean validateuser()
-    {
-        String userstr=textInputusername.getEditText().getText().toString().trim();
-
-        if((userstr.isEmpty()))
-        {
-            textInputusername.setError("fail can't be empty  ");
-            return  false;
-        }
-        else if((userstr.length())>15)
-        {
-            textInputusername.setError("username too long");
-            return false;
-        }
-        else
-        {
-            textInputusername.setError(null);
             return true;
         }
     }
