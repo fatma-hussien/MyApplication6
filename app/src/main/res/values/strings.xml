@@ -11,6 +11,7 @@
     <string name="tv_gender">gender</string>
     <string name="RB2">female</string>
     <string name="number">number phone</string>
+    <string name="haveacount">Already have an accout ?</string>
     <string-array name="countries">
         <item>Afghanstan</item>
         <item>Albania</item>
@@ -19,4 +20,5 @@
         <item>Yamen</item>
         <item>Eygpt</item>
     </string-array>
+
 </resources>

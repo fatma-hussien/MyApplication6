@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.santalu.maskedittext.MaskEditText;
@@ -24,6 +25,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class signup extends AppCompatActivity {
 
+    TextView tv_have_acount;
     EditText et_fname,et_lname;
     TextInputEditText et_email,et_password,et_repassword;
     MaskEditText et_phone;
@@ -48,8 +50,7 @@ public class signup extends AppCompatActivity {
         et_phone=findViewById(R.id.number);
         b_gen1=findViewById(R.id.radiobutton1);
         b_gen2=findViewById(R.id.radiobutton2);
-
-
+        tv_have_acount=findViewById(R.id.tv_haveacount);
 
 
         String[] countries=getResources().getStringArray(R.array.countries);
@@ -125,9 +126,17 @@ public class signup extends AppCompatActivity {
                 }
                 else
                 {
-                    Intent intent=new Intent(signup.this,mypage.class);
+                    Intent intent=new Intent(signup.this,Home.class);
                     startActivity(intent);
                 }
+            }
+        });
+
+        tv_have_acount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(signup.this,login.class);
+                startActivity(intent);
             }
         });
     }

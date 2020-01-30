@@ -100,7 +100,6 @@
                     android:layout_margin="5dp"
                     android:inputType="textPassword" />
             </android.support.design.widget.TextInputLayout>
-
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/repass_signup"
                 android:hint="@string/repass"
@@ -162,6 +161,18 @@
                 android:background="@drawable/my_button_bor"
                 android:layout_gravity="center_horizontal"
                 style="@style/Widget.Design.BottomNavigationView"/>
+            <TextView
+                android:id="@+id/tv_haveacount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/haveacount"
+                android:textStyle="italic"
+                android:textSize="25dp"
+                android:textColor="#c24f72ff"
+                android:autoLink="all"
+                android:linksClickable="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="10dp"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
