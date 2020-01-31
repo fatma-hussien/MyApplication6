@@ -8,4 +8,9 @@
     android:layout_margin="10dp"
     tools:context="com.example.zahran.myapplication.SplashScreen">
 
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_gravity="center" />
+
 </LinearLayout>

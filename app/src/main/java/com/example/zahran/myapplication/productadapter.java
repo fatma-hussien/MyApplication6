@@ -18,11 +18,11 @@ import java.util.ArrayList;
 
 public class productadapter extends ArrayAdapter<product> {
 
-    public productadapter(@NonNull Context context, ArrayList<product> product1) {
-        super(context, 0, product1);
-
-
+        public productadapter(@NonNull Context context, ArrayList<product> product1) {
+            super(context, 0, product1);
     }
+
+
 
     public View getView(int position, View convertView, ViewGroup parent) {
         // Check if the existing view is being reused, otherwise inflate the view
@@ -31,6 +31,7 @@ public class productadapter extends ArrayAdapter<product> {
             listItemView = LayoutInflater.from(getContext()).inflate(
                     R.layout.item_product_list, parent, false);
         }
+
 
         // Get the {@link AndroidFlavor} object located at this position in the list
         product current = getItem(position);
@@ -69,8 +70,10 @@ public class productadapter extends ArrayAdapter<product> {
         ImageView imageView_share = (ImageView) listItemView.findViewById(R.id.share);
         imageView_share.setImageResource(current.getShareimage());
 
+
         // Return the whole list item layout (containing 2 TextViews and an ImageView)
         // so that it can be shown in the ListView
         return listItemView;
     }
+
 }
